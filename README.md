@@ -7,21 +7,21 @@ This web application allows users to track their expenses efficiently. Users can
 
 Features:
 
-Wallet Balance: Starts at 5000, with the ability to increase it.
+* Wallet Balance: Starts at 5000, with the ability to increase it.
 
-Spending Limit: Users cannot exceed their available wallet balance; an alert is shown if they try to do so.
+* Spending Limit: Users cannot exceed their available wallet balance; an alert is shown if they try to do so.
 
-Add Expenses: Users can input details for new expenses, including title, amount, category, and date.
+* Add Expenses: Users can input details for new expenses, including title, amount, category, and date.
 
-Dynamic Updates: The wallet balance updates automatically with each expense addition or modification.
+* Dynamic Updates: The wallet balance updates automatically with each expense addition or modification.
 
-Edit and Delete Expenses: Users can easily modify or remove expenses as needed.
+* Edit and Delete Expenses: Users can easily modify or remove expenses as needed.
 
-Expense Summary: View a summary of total expenses, categorized by date or type.
+* Expense Summary: View a summary of total expenses, categorized by date or type.
 
-Data Persistence: Wallet balance and expense data are saved in localStorage, ensuring information is retained upon page refresh.
+* Data Persistence: Wallet balance and expense data are saved in localStorage, ensuring information is retained upon page refresh.
 
-Responsive Design: The application is optimized for various screen sizes.
+* Responsive Design: The application is optimized for various screen sizes.
 
 Technologies used:
 
