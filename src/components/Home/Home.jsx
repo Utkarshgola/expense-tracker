@@ -41,7 +41,6 @@ export default function Home() {
   const [balance, setBalance] = useLocalStorage("balance", 5000);
   const [expenseList, setExpenseList] = useLocalStorage("expenses", []);
 
-
   const [isOpenExpense, setIsOpenExpense] = useState(false);
   const [isOpenBalance, setIsOpenBalance] = useState(false);
   const { spends: categorySpends, counts: categoryCounts } =
@@ -64,11 +63,13 @@ export default function Home() {
       <h1>Expense Tracker</h1>
 
       <div className={styles.cardsWrapper}>
-        <Card  title="Wallet Balance"
+        <Card
+          title="Wallet Balance"
           money={balance}
           buttonText="+ Add Income"
           buttonType="success"
-          handleClick={handleAddIncome}/>
+          handleClick={handleAddIncome}
+        />
 
         <Card
           title="Expenses"
@@ -79,10 +80,15 @@ export default function Home() {
           handleClick={handleAddExpense}
         />
 
-        {/* add piechart  */}
+        <PieChart
+          data={[
+            { name: "Food", value: categorySpends.food },
+            { name: "Entertainment", value: categorySpends.entertainment },
+            { name: "Travel", value: categorySpends.travel },
+          ].filter((item) => item.value)}
+        />
       </div>
 
-      
       <div className={styles.transactionsWrapper}>
         <TransactionList
           transactions={expenseList}
@@ -101,7 +107,6 @@ export default function Home() {
         />
       </div>
 
-      
       <Modal isOpen={isOpenExpense} setIsOpen={setIsOpenExpense}>
         <ExpenseForm
           setIsOpen={setIsOpenExpense}
