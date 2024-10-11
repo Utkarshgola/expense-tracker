@@ -32,6 +32,13 @@ export default function TransactionList({
     setIsDisplayEditor(true);
   };
 
+  // update page if all items on current page have been deleted
+  useEffect(() => {
+    if (totalPages < currentPage && currentPage > 1) {
+      setCurrentPage((prev) => prev - 1);
+    }
+  }, [totalPages]);
+
   useEffect(() => {
     const startIndex = (currentPage - 1) * maxRecords;
     const endIndex = Math.min(currentPage * maxRecords, transactions.length);
@@ -40,12 +47,7 @@ export default function TransactionList({
     setTotalPages(Math.ceil(transactions.length / maxRecords));
   }, [currentPage, transactions]);
 
-  // update page if all items on current page have been deleted
-  useEffect(() => {
-    if (totalPages < currentPage && currentPage > 1) {
-      setCurrentPage((prev) => prev - 1);
-    }
-  }, [totalPages]);
+  
 
   return (
     <div className={styles.transactionsWrapper}>
@@ -76,6 +78,7 @@ export default function TransactionList({
           <p>No transactions!</p>
         </div>
       )}
+
 
       <Modal isOpen={isDisplayEditor} setIsOpen={setIsDisplayEditor}>
         <ExpenseForm

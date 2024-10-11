@@ -23,11 +23,6 @@ export default function ExpenseForm({
 
   const { enqueueSnackbar } = useSnackbar();
 
-  const handleChange = (e) => {
-    const name = e.target.name;
-    setFormData((prev) => ({ ...prev, [name]: e.target.value }));
-  };
-
   const handleAdd = (e) => {
     e.preventDefault();
 
@@ -53,6 +48,13 @@ export default function ExpenseForm({
 
     setIsOpen(false);
   };
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    setFormData((prev) => ({ ...prev, [name]: e.target.value }));
+  };
+
+ 
 
   const handleEdit = (e) => {
     e.preventDefault();
@@ -81,21 +83,6 @@ export default function ExpenseForm({
     setIsOpen(false);
   };
 
-  // useEffect(() => {
-
-  //     if (editId) {
-  //         const expenseData = expenseList.find(item => item.id == editId)
-
-  //         setFormData({
-  //             title: expenseData.title,
-  //             category: expenseData.category,
-  //             price: expenseData.price,
-  //             date: expenseData.date
-  //         })
-
-  //     }
-
-  // }, [editId])
 
   return (
     <div className={styles.formWrapper}>

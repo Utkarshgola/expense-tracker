@@ -41,7 +41,7 @@ export default function Home() {
   const [balance, setBalance] = useLocalStorage("balance", 5000);
   const [expenseList, setExpenseList] = useLocalStorage("expenses", []);
 
-  // Show hide modals
+
   const [isOpenExpense, setIsOpenExpense] = useState(false);
   const [isOpenBalance, setIsOpenBalance] = useState(false);
   const { spends: categorySpends, counts: categoryCounts } =
@@ -63,7 +63,6 @@ export default function Home() {
     <div className={styles.container}>
       <h1>Expense Tracker</h1>
 
-      {/* Cards and pie chart wrapper */}
       <div className={styles.cardsWrapper}>
         <Card  title="Wallet Balance"
           money={balance}
