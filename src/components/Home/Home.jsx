@@ -80,13 +80,7 @@ export default function Home() {
           handleClick={handleAddExpense}
         />
 
-        <PieChart
-          data={[
-            { name: "Food", value: categorySpends.food },
-            { name: "Entertainment", value: categorySpends.entertainment },
-            { name: "Travel", value: categorySpends.travel },
-          ].filter((item) => item.value)}
-        />
+        {/* add piechart  */}
       </div>
 
       
